@@ -5,7 +5,7 @@ provides=(halium10-post-install)
 conflicts=(halium10-post-install)
 pkgver=1$(date +%y%m%d)
 pkgrel=1
-pkgdesc="Manjaro libhybris adaptation for xiaomi lavender"
+pkgdesc="Manjaro libhybris adaptation for xiaomi dandelion"
 arch=('any')
 url="https://github.com/manjaro-libhybris-devices/xiaomi-dandelion-adaptation"
 license=('GPL')
@@ -30,7 +30,7 @@ package() {
     cp -r "${srcdir}/xiaomi-dandelion-adaptation/droid-vendor-overlay" -t "${pkgdir}/usr/lib/"
 
     mkdir -p "${pkgdir}/lib/modules/"
-    cp -r "${srcdir}/xiaomi-miatoll-adaptation/vendor" -t "${pkgdir}/lib/modules"
+    cp -r "${srcdir}/xiaomi-dandelion-adaptation/vendor" -t "${pkgdir}/lib/modules"
 
     mkdir -p ${pkgdir}/etc/phosh/
     install -Dm644 "${srcdir}/xiaomi-dandelion-adaptation/phoc.ini" -t "${pkgdir}/etc/phosh/"
@@ -42,11 +42,11 @@ package() {
     install -Dm644 "${srcdir}/xiaomi-dandelion-adaptation/10-env.conf" -t "${pkgdir}/etc/systemd/user/pulseaudio.service.d/"
 
     mkdir -p "${pkgdir}/etc/pulse/"
-    install -Dm644 "${srcdir}/xiaomi-dandelion-adaptation/arm_droid_card_custom.pa" -t "${pkgdir}/etc/pulse/
+    install -Dm644 "${srcdir}/xiaomi-dandelion-adaptation/arm_droid_card_custom.pa" -t "${pkgdir}/etc/pulse/"
 
     mkdir -p "${pkgdir}/etc/modules-load.d/"
-    install -Dm644 "${srcdir}/xiaomi-dandelion-adaptation/performance.conf" -t "${pkgdir}/etc/modules-load.d/
-    install -Dm644 "${srcdir}/xiaomi-dandelion-adaptation/connectivity.conf" -t "${pkgdir}/etc/modules-load.d/
+    install -Dm644 "${srcdir}/xiaomi-dandelion-adaptation/performance.conf" -t "${pkgdir}/etc/modules-load.d/"
+    install -Dm644 "${srcdir}/xiaomi-dandelion-adaptation/connectivity.conf" -t "${pkgdir}/etc/modules-load.d/"
 
     mkdir -p "${pkgdir}/boot/"
     install -Dm644 "${srcdir}/xiaomi-dandelion-adaptation/boot.img" -t "${pkgdir}/boot/"
