@@ -29,8 +29,8 @@ package() {
 
     cp -r "${srcdir}/xiaomi-dandelion-adaptation/droid-vendor-overlay" -t "${pkgdir}/usr/lib/"
 
-    mkdir -p "${pkgdir}/lib/modules/"
-    cp -r "${srcdir}/xiaomi-dandelion-adaptation/vendor" -t "${pkgdir}/lib/modules"
+    mkdir -p "${pkgdir}/usr/lib/modules/"
+    cp -r "${srcdir}/xiaomi-dandelion-adaptation/vendor" -t "${pkgdir}/usr/lib/modules"
 
     mkdir -p ${pkgdir}/etc/phosh/
     install -Dm644 "${srcdir}/xiaomi-dandelion-adaptation/phoc.ini" -t "${pkgdir}/etc/phosh/"
