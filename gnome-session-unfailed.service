@@ -1,0 +1,11 @@
+[Unit]
+Description=make gnome-session-failed not run under any circumstance
+Requires=lxc@android.service
+Before=phosh.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/mount --bind /usr/lib/gnome-session-not-failed /usr/lib/gnome-session-failed
+
+[Install]
+WantedBy=multi-user.target

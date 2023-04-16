@@ -1,0 +1,9 @@
+[Unit]
+Description=xiaomi dandelion adaptation service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/xiaomi-dandelion-adaptation
+
+[Install]
+WantedBy=default.target
