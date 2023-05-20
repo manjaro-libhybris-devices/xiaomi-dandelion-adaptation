@@ -56,12 +56,9 @@ package() {
     install -Dm644 "${srcdir}/xiaomi-dandelion-adaptation/brightness.service" "${pkgdir}/usr/lib/systemd/system/"
     install -Dm644 "${srcdir}/xiaomi-dandelion-adaptation/pbhelper.service" "${pkgdir}/usr/lib/systemd/system/"
     install -Dm644 "${srcdir}/xiaomi-dandelion-adaptation/ssh-fix.service" "${pkgdir}/usr/lib/systemd/system/"
-    install -Dm644 "${srcdir}/xiaomi-dandelion-adaptation/gnome-session-unfailed.service" "${pkgdir}/usr/lib/systemd/system/"
 
     mkdir -p "${pkgdir}/usr/lib/systemd/system/bluebinder.service.d/"
     install -Dm644 "${srcdir}/xiaomi-dandelion-adaptation/10-after.conf" "${pkgdir}/usr/lib/systemd/system/bluebinder.service.d"
-
-    install -Dm755 "${srcdir}/xiaomi-dandelion-adaptation/gnome-session-not-failed" "${pkgdir}/usr/lib/gnome-session-not-failed"
 
     mkdir -p "${pkgdir}/usr/share/glib-2.0/schemas/"
     install -Dm644 "${srcdir}/xiaomi-dandelion-adaptation/90_manjaro.gschema.override" -t "${pkgdir}/usr/share/glib-2.0/schemas/"
