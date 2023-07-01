@@ -60,9 +60,6 @@ package() {
     mkdir -p "${pkgdir}/usr/lib/systemd/system/bluebinder.service.d/"
     install -Dm644 "${srcdir}/xiaomi-dandelion-adaptation/10-after.conf" "${pkgdir}/usr/lib/systemd/system/bluebinder.service.d"
 
-    mkdir -p "${pkgdir}/usr/share/glib-2.0/schemas/"
-    install -Dm644 "${srcdir}/xiaomi-dandelion-adaptation/90_manjaro.gschema.override" -t "${pkgdir}/usr/share/glib-2.0/schemas/"
-
     mkdir -p "${pkgdir}/var/lib/bluetooth/"
     install -Dm644 "${srcdir}/xiaomi-dandelion-adaptation/board-address" -t "${pkgdir}/var/lib/bluetooth/"
 
